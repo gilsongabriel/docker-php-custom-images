@@ -1,14 +1,14 @@
 # About this custom image
 
-This image are customized from docker official [PHP Repository](https://hub.docker.com/_/php), 
-and added some packages to run [Laravel](https://laravel.com) apps and some official packages:
+This image is customized from the official [PHP 7.4.4 FPM Alpine 3.11](https://hub.docker.com/_/php) image,
+and we added some packages to run applications [Laravel](https://laravel.com), along with some official packages:
  - [Horizon](https://laravel.com/docs/7.x/horizon)
  - [Telescope](https://laravel.com/docs/7.x/telescope)
  - [Socialite](https://laravel.com/docs/7.x/socialite)
 
 # What's included
 
-##### This image contain this packages by default:
+##### This image contain these packages by default:
 
 - Dockerize v0.6.1 [Github Repository (jwilder/dockerize)](https://github.com/jwilder/dockerize)
 - Composer
@@ -21,7 +21,7 @@ and added some packages to run [Laravel](https://laravel.com) apps and some offi
 
 # PHP Extensions Enabled
 
-##### By default, this extensions are enabled
+##### By default, these extensions are enabled
 
 - bcmath
 - json
