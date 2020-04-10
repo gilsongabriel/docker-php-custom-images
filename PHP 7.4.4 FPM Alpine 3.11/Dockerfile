@@ -19,7 +19,5 @@ COPY ./docker-php-entrypoint /usr/local/bin/entrypoint
 RUN chmod +x /usr/local/bin/docker-php-entrypoint
 RUN chmod +x /usr/local/bin/entrypoint
 
-WORKDIR /app
-
 EXPOSE 9000
 EXPOSE 9001
