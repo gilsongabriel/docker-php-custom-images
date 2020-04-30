@@ -13,7 +13,8 @@ steps:
         git remote add origin https://${_GITHUB_USER}:${_GITHUB_TOKEN}@github.com/${_GITHUB_USER}/docker-php-custom-images.git
         git config --global user.name ${_GIT_GLOBAL_USER_NAME}
         git config --global user.email ${_GIT_GLOBAL_USER_EMAIL}
-        git status
-#        git add .
+        git checkout -b develop
+        git pull origin develop
+        git request-pull master ./
 #        git commit -m "Push to master branch from cloud build $SHORT_SHA"
 #        git push origin master
