@@ -1,0 +1,8 @@
+steps:
+  -   id: 'Run docker-compose'
+      name: 'gcr.io/$PROJECT_ID/docker-compose:1.25.5'
+      args: ['-f','PHP_7.4.4_FPM_Alpine_3.11/docker-compose.yaml','up','-d']
+
+  -   id: 'Show docker-php-entrypoint content'
+      name: 'gcr.io/cloud-builders/docker'
+      args: ['exec','-t','app','cat','/usr/local/bin/docker-php-entrypoint']
