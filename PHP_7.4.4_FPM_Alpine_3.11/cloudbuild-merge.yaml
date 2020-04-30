@@ -17,6 +17,6 @@ steps:
         git pull origin develop
         git add .
         git commit -m "Pull request"
-        git request-pull master ./
+        git request-pull
 #        git commit -m "Push to master branch from cloud build $SHORT_SHA"
 #        git push origin master
