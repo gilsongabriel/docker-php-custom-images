@@ -40,7 +40,7 @@ and we added some packages to run applications [Laravel](https://laravel.com), a
 ### Create a Dockerfile in your PHP project
 
 ```dockerfile
-FROM codemastersolucoes/php:7.4.4-fpm-alpine3.11
+FROM codemastersolutions/php:7.4.4-fpm-alpine3.11
 #The application files directory
 WORKDIR /app
 #Default port to FPM server
@@ -62,7 +62,7 @@ $ docker run -it --rm --name my-running-app my-php-app
 version: "3.7"
 services:
   app:
-    image: codemastersolucoes/php:7.4.4-fpm-alpine3.11
+    image: codemastersolutions/php:7.4.4-fpm-alpine3.11
     container_name: my-container-name
     volumes:
       - ./app-src:/app
