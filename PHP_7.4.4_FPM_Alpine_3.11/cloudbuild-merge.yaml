@@ -9,10 +9,10 @@ steps:
     args:
       - '-c'
       - |
-        ls -la
         git init
         git remote add origin https://github.com/gilsongabriel/docker-php-custom-images.git
         git config --global user.name ${_GIT_GLOBAL_USER_NAME}
         git config --global user.email ${_GIT_GLOBAL_USER_EMAIL}
-        git status
-#        git push origin master
+        git add .
+        git commit -m "Push to master branch from cloud build $BUILD_ID"
+        git push origin master
