@@ -1,6 +1,6 @@
 # About this custom image
 
-This image are customized from the official [PHP 7.4.8 FPM Alpine 3.12](https://hub.docker.com/_/php) image,
+This image is customized from the official [PHP 7.4.8 FPM Alpine 3.12](https://hub.docker.com/_/php) image,
 and added some packages to run applications [Laravel](https://laravel.com), along with some official packages:
  - [Horizon](https://laravel.com/docs/7.x/horizon)
  - [Telescope](https://laravel.com/docs/7.x/telescope)
@@ -8,9 +8,10 @@ and added some packages to run applications [Laravel](https://laravel.com), alon
 
 # What's included
 
-##### This image contain these packages by default:
+##### This image contains these packages by default:
 
 - Dockerize v0.6.1 [Github Repository (jwilder/dockerize)](https://github.com/jwilder/dockerize)
+- PhpUnit Watcher [Github Repository (spatie/phpunit-watcher)](https://github.com/spatie/phpunit-watcher)
 - Composer
 - Git
 - Nano Text Editor
@@ -25,24 +26,25 @@ and added some packages to run applications [Laravel](https://laravel.com), alon
 
 - bcmath
 - json
+- mbstring
+- pcntl
 - pdo
 - pdo_mysql
-- sqlsrv
 - pdo_sqlsrv
+- redis
+- sqlsrv
+- xdebug
 - xml
 - xmlrpc
 - xsl
-- mbstring
 - zip
-- pcntl
-- redis
 
 # How to use
 
 ### Create a Dockerfile in your PHP project
 
 ```dockerfile
-FROM codemastersolutions/php:7.4.8-fpm-buster
+FROM codemastersolutions/php:7.4.8-fpm-alpine3.12
 #The application files directory
 WORKDIR /app
 #Default port to FPM server
@@ -64,7 +66,7 @@ $ docker run -it --rm --name my-running-app my-php-app
 version: "3.7"
 services:
   app:
-    image: codemastersolutions/php:7.4.8-fpm-buster
+    image: codemastersolutions/php:7.4.8-fpm-alpine3.12
     container_name: my-container-name
     volumes:
       - ./app-src:/app
