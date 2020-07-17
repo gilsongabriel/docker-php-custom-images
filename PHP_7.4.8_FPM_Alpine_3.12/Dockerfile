@@ -16,14 +16,10 @@ RUN apk add --allow-untrusted msodbcsql17_17.5.2.2-1_amd64.apk
 #RUN apk add --allow-untrusted mssql-tools_17.5.2.1-1_amd64.apk
 
 RUN pecl install sqlsrv pdo_sqlsrv \
-    && docker-php-ext-enable sqlsrv pdo_sqlsrv
+    && docker-php-ext-enable sqlsrv pdo_sqlsrv xsl zip
 
 RUN rm -rf msodbcsql17_17.5.2.2-1_amd64.apk
 #RUN rm -rf mssql-tools_17.5.2.1-1_amd64.apk
-
-#RUN apk del libxml2-dev oniguruma-dev unixodbc-dev autoconf make build-base \
-#    && rm -rf /var/lib/apt/lists/* \
-#    && rm -rf /var/cache/apk/*
 
 ENV DV v0.6.1
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DV/dockerize-linux-amd64-$DV.tar.gz \
