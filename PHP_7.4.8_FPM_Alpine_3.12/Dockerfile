@@ -10,14 +10,20 @@ RUN apk add --no-cache nano git unzip supervisor composer libxml2-dev libxslt-de
     && rm -rf /var/cache/apk/*
 
 RUN curl -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/msodbcsql17_17.5.2.2-1_amd64.apk
-RUN curl -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/mssql-tools_17.5.2.1-1_amd64.apk
+#RUN curl -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac7-8d28ddafb39b/mssql-tools_17.5.2.1-1_amd64.apk
 
 RUN apk add --allow-untrusted msodbcsql17_17.5.2.2-1_amd64.apk
-RUN apk add --allow-untrusted mssql-tools_17.5.2.1-1_amd64.apk
+#RUN apk add --allow-untrusted mssql-tools_17.5.2.1-1_amd64.apk
 
-RUN pecl install sqlsrv pdo_sqlsrv
+RUN pecl install sqlsrv pdo_sqlsrv \
+    && docker-php-ext-enable sqlsrv pdo_sqlsrv
 
-RUN docker-php-ext-enable sqlsrv pdo_sqlsrv
+RUN rm -rf msodbcsql17_17.5.2.2-1_amd64.apk
+#RUN rm -rf mssql-tools_17.5.2.1-1_amd64.apk
+
+RUN apk del libxml2-dev libxslt-dev oniguruma-dev libzip-dev unixodbc-dev autoconf make build-base \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /var/cache/apk/*
 
 ENV DV v0.6.1
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DV/dockerize-linux-amd64-$DV.tar.gz \
