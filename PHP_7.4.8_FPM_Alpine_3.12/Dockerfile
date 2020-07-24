@@ -14,7 +14,8 @@ RUN curl -O https://download.microsoft.com/download/e/4/e/e4e67866-dffd-428c-aac
 RUN apk add --allow-untrusted msodbcsql17_17.5.2.2-1_amd64.apk
 
 RUN pecl install sqlsrv pdo_sqlsrv xdebug-2.9.6 \
-    && docker-php-ext-enable sqlsrv pdo_sqlsrv xsl zip xdebug
+    && docker-php-ext-enable \
+    sqlsrv pdo_sqlsrv xsl zip xdebug intl bcmath json pdo pdo_mysql xml xmlrpc mbstring pcntl redis
 
 RUN rm -rf msodbcsql17_17.5.2.2-1_amd64.apk
 
@@ -25,7 +26,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DV/dockerize-li
 
 RUN composer global require spatie/phpunit-watcher
 
-RUN apk del --purge libxml2-dev oniguruma-dev unixodbc-dev autoconf make build-base icu-dev
+RUN apk del --purge libxml2-dev oniguruma-dev unixodbc-dev autoconf make build-base
 
 COPY ./supervisord.conf /etc/
 COPY ./docker-php-entrypoint /usr/local/bin/
