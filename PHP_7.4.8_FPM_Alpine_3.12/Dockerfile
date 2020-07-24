@@ -1,10 +1,10 @@
 FROM php:7.4.8-fpm-alpine3.12
 MAINTAINER "Gilson Gabriel <gilson@codemastersolucoes.com>"
 
-RUN apk add --no-cache nano git unzip supervisor composer libxml2-dev libxslt-dev oniguruma-dev libzip-dev \
+RUN apk add --no-cache nano git unzip supervisor composer libxml2-dev libxslt-dev oniguruma-dev libzip-dev icu-dev \
     unixodbc-dev autoconf make build-base \
     && git clone https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis \
-    && docker-php-ext-install bcmath json pdo pdo_mysql xml xmlrpc xsl mbstring zip pcntl redis \
+    && docker-php-ext-install intl bcmath json pdo pdo_mysql xml xmlrpc xsl mbstring zip pcntl redis \
     && rm -rf /var/www/html \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apk/*
@@ -25,7 +25,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DV/dockerize-li
 
 RUN composer global require spatie/phpunit-watcher
 
-RUN apk del --purge libxml2-dev oniguruma-dev unixodbc-dev autoconf make build-base
+RUN apk del --purge libxml2-dev oniguruma-dev unixodbc-dev autoconf make build-base icu-dev
 
 COPY ./supervisord.conf /etc/
 COPY ./docker-php-entrypoint /usr/local/bin/
