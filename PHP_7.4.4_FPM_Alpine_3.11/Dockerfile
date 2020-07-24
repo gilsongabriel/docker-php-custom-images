@@ -13,7 +13,9 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DV/dockerize-li
     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DV.tar.gz \
     && rm dockerize-linux-amd64-$DV.tar.gz
 
-RUN apk del --purge libxml2-dev oniguruma-dev icu-dev
+RUN docker-php-ext-enable intl
+
+RUN apk del --purge libxml2-dev oniguruma-dev
 
 COPY ./supervisord.conf /etc/
 COPY ./docker-php-entrypoint /usr/local/bin/
