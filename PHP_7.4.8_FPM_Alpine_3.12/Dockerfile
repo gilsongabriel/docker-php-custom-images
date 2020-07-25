@@ -1,7 +1,7 @@
 FROM php:7.4.8-fpm-alpine3.12
 MAINTAINER "Gilson Gabriel <gilson@codemastersolucoes.com>"
 
-RUN apk add --no-cache nano git unzip supervisor composer libxml2-dev libxslt-dev oniguruma-dev libzip-dev icu-dev \
+RUN apk add --no-cache shadow nano git unzip supervisor composer libxml2-dev libxslt-dev oniguruma-dev libzip-dev icu-dev \
     unixodbc-dev autoconf make build-base \
     && git clone https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis \
     && docker-php-ext-install intl bcmath json pdo pdo_mysql xml xmlrpc xsl mbstring zip pcntl redis \
@@ -33,6 +33,9 @@ COPY ./docker-php-entrypoint /usr/local/bin/
 COPY ./docker-php-entrypoint /usr/local/bin/entrypoint
 RUN chmod +x /usr/local/bin/docker-php-entrypoint
 RUN chmod +x /usr/local/bin/entrypoint
+
+RUN usermod -u 1000 www-data
+USER www-data
 
 EXPOSE 9000
 EXPOSE 9001
