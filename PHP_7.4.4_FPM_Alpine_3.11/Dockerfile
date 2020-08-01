@@ -23,8 +23,5 @@ COPY ./docker-php-entrypoint /usr/local/bin/entrypoint
 RUN chmod +x /usr/local/bin/docker-php-entrypoint
 RUN chmod +x /usr/local/bin/entrypoint
 
-RUN usermod -u 1000 www-data
-USER www-data
-
 EXPOSE 9000
 EXPOSE 9001

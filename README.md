@@ -1,3 +1,6 @@
+![CodeMaster Logo](https://avatars3.githubusercontent.com/u/63756350?s=100&v=4)
+##[CodeMaster Soluções](https://codemastersolucoes.com)
+
 # About these custom images
 
 These images are customized from the official [PHP images registered on DockerHub](https://hub.docker.com/_/php)

@@ -1,3 +1,6 @@
+![CodeMaster Logo](https://avatars3.githubusercontent.com/u/63756350?s=100&v=4)
+##[CodeMaster Soluções](https://codemastersolucoes.com)
+
 # About this custom image
 
 This image is customized from the official [PHP 7.4.4 FPM Alpine 3.11](https://hub.docker.com/_/php) image,
@@ -43,6 +46,10 @@ and we added some packages to run applications [Laravel](https://laravel.com), a
 FROM codemastersolutions/php:7.4.4-fpm-alpine3.11
 #The application files directory
 WORKDIR /app
+#Set permission to user www-data
+RUN usermod -u 1000 www-data
+#Set default user to image
+USER www-data
 #Default port to FPM server
 EXPOSE 9000
 #Default port to supervisor web server
@@ -76,7 +83,6 @@ services:
     restart: always
     tty: true
 ```
-
 # Accessing Supervisor Web Server
 
 ##### URL: http://localhost:9001

@@ -4,7 +4,7 @@ MAINTAINER "Gilson Gabriel <gilson@codemastersolucoes.com>"
 RUN apk add --no-cache shadow nano git unzip supervisor composer libxml2-dev libxslt-dev oniguruma-dev libzip-dev icu-dev \
     unixodbc-dev autoconf make build-base \
     && git clone https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis \
-    && docker-php-ext-install intl bcmath json pdo pdo_mysql xml xmlrpc xsl mbstring zip pcntl redis \
+    && docker-php-ext-install intl bcmath json pdo pdo_mysql xml xmlrpc xsl mbstring zip pcntl redis mysqli \
     && rm -rf /var/www/html \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apk/*
@@ -15,7 +15,7 @@ RUN apk add --allow-untrusted msodbcsql17_17.5.2.2-1_amd64.apk
 
 RUN pecl install sqlsrv pdo_sqlsrv xdebug-2.9.6 \
     && docker-php-ext-enable \
-    sqlsrv pdo_sqlsrv xsl zip xdebug intl bcmath json pdo pdo_mysql xml xmlrpc mbstring pcntl redis
+    sqlsrv pdo_sqlsrv xsl zip xdebug intl bcmath json pdo pdo_mysql xml xmlrpc mbstring pcntl redis mysqli
 
 RUN rm -rf msodbcsql17_17.5.2.2-1_amd64.apk
 
@@ -33,9 +33,6 @@ COPY ./docker-php-entrypoint /usr/local/bin/
 COPY ./docker-php-entrypoint /usr/local/bin/entrypoint
 RUN chmod +x /usr/local/bin/docker-php-entrypoint
 RUN chmod +x /usr/local/bin/entrypoint
-
-RUN usermod -u 1000 www-data
-USER www-data
 
 EXPOSE 9000
 EXPOSE 9001
