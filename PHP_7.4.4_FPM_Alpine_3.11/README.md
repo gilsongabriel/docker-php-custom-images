@@ -1,5 +1,8 @@
-![CodeMaster Logo](https://avatars3.githubusercontent.com/u/63756350?s=100&v=4)
-## [CodeMaster Soluções](https://codemastersolucoes.com)
+<p align="center">
+    <a href="https://codemastersolucoes.com" target="_blank">
+        <img data-testid="logo" src="https://cms-public-images.s3.amazonaws.com/logo.png">
+    </a>
+</p>
 
 # About this custom image
 
@@ -59,8 +62,8 @@ EXPOSE 9001
 ##### Then, run the commands to build and run the Docker image:
 
 ```shell script
-$ docker build -t my-php-app .
-$ docker run -it --rm --name my-running-app my-php-app
+docker build -t my-php-app .
+docker run -it --rm --name my-running-app my-php-app
 ```
 
 # Using with Docker Composer
@@ -83,10 +86,11 @@ services:
     restart: always
     tty: true
 ```
+
 # Accessing Supervisor Web Server
 
 ##### URL: http://localhost:9001
 ##### User: admin
-##### Password: cmsspvr#@
+##### Password: 123123
 
 You can change the port, user and password in the supervisord config file, located in /etc/supervisord.conf.
