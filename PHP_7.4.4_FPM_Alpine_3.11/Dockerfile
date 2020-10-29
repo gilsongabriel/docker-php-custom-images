@@ -1,5 +1,5 @@
 FROM php:7.4.4-fpm-alpine3.11
-MAINTAINER "Gilson Gabriel <gilson@codemastersolucoes.com>"
+LABEL maintainer="Gilson Gabriel <gilson@codemastersolucoes.com>"
 
 RUN apk add --no-cache shadow libzip-dev libxml2-dev libxslt-dev oniguruma-dev nano git unzip supervisor composer icu-dev \
     && git clone https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis \
