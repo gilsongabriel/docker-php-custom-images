@@ -1,13 +1,16 @@
-![CodeMaster Logo](https://avatars3.githubusercontent.com/u/63756350?s=100&v=4)
-## [CodeMaster Soluções](https://codemastersolucoes.com)
+<p align="center">
+    <a href="https://codemastersolucoes.com" target="_blank">
+        <img data-testid="logo" src="https://cms-public-images.s3.amazonaws.com/logo.png">
+    </a>
+</p>
 
 # About this custom image
 
 This image is customized from the official [PHP 7.4.12 FPM Alpine 3.12](https://hub.docker.com/_/php) image,
 and added some packages to run applications [Laravel](https://laravel.com), along with some official packages:
- - [Horizon](https://laravel.com/docs/7.x/horizon)
- - [Telescope](https://laravel.com/docs/7.x/telescope)
- - [Socialite](https://laravel.com/docs/7.x/socialite)
+ - [Horizon](https://laravel.com/docs/8.x/horizon)
+ - [Telescope](https://laravel.com/docs/8.x/telescope)
+ - [Socialite](https://laravel.com/docs/8.x/socialite)
 
 # What's included
 

@@ -1,5 +1,8 @@
-![CodeMaster Logo](https://avatars3.githubusercontent.com/u/63756350?s=100&v=4)
-## [CodeMaster Soluções](https://codemastersolucoes.com)
+<p align="center">
+    <a href="https://codemastersolucoes.com" target="_blank">
+        <img data-testid="logo" src="https://cms-public-images.s3.amazonaws.com/logo.png">
+    </a>
+</p>
 
 # About this custom image
 
