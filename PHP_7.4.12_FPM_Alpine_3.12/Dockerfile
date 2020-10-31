@@ -1,4 +1,4 @@
-FROM php:7.4.8-fpm-alpine3.12
+FROM php:7.4.12-fpm-alpine3.12
 LABEL maintainer="Gilson Gabriel <gilson@codemastersolucoes.com>"
 
 RUN apk add --no-cache shadow nano git unzip supervisor composer libxml2-dev libxslt-dev oniguruma-dev libzip-dev icu-dev \
