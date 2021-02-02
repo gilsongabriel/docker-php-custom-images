@@ -34,7 +34,7 @@ RUN ./zsh-in-docker.sh \
     -a 'bindkey "\$terminfo[kcuu1]" history-substring-search-up' \
     -a 'bindkey "\$terminfo[kcud1]" history-substring-search-down'
 
-COPY ./.zshrc /root/
+COPY ./zshrc ~/.zshrc
 
 RUN apk add --no-cache zsh-vcs
 

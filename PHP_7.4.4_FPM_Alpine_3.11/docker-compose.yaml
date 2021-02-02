@@ -1,8 +1,8 @@
 version: "3.7"
 services:
-  app:
+  php744a311:
     build: .
-    container_name: app
+    container_name: php744a311
     entrypoint: /usr/local/bin/docker-php-entrypoint
     ports:
       - "9000:9000"
