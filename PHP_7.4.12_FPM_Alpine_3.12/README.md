@@ -18,6 +18,7 @@ and added some packages to run applications [Laravel](https://laravel.com), alon
 
 - Dockerize v0.6.1 [Github Repository (jwilder/dockerize)](https://github.com/jwilder/dockerize)
 - PhpUnit Watcher [Github Repository (spatie/phpunit-watcher)](https://github.com/spatie/phpunit-watcher)
+- Oh My Zsh for Docker [Github Repository (deluan/zsh-in-docker)](https://github.com/deluan/zsh-in-docker)
 - Composer
 - Git
 - Nano Text Editor
@@ -96,6 +97,6 @@ services:
 
 ##### URL: http://localhost:9001
 ##### User: admin
-##### Password: 123123
+##### Password: 123
 
 You can change the port, user and password in the supervisord config file, located in /etc/supervisord.conf.

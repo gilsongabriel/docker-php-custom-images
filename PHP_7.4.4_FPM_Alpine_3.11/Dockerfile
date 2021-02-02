@@ -17,6 +17,27 @@ RUN docker-php-ext-enable intl
 
 RUN apk del --purge libxml2-dev oniguruma-dev
 
+RUN wget https://github.com/deluan/zsh-in-docker/releases/download/v1.1.1/zsh-in-docker.sh
+
+RUN chmod +x zsh-in-docker.sh
+
+RUN ./zsh-in-docker.sh \
+    -t https://github.com/denysdovhan/spaceship-prompt \
+    -a 'SPACESHIP_PROMPT_ADD_NEWLINE="false"' \
+    -a 'SPACESHIP_PROMPT_SEPARATE_LINE="false"' \
+    -p git \
+    -p https://github.com/zsh-users/zsh-autosuggestions \
+    -p https://github.com/zsh-users/zsh-completions \
+    -p https://github.com/zsh-users/zsh-history-substring-search \
+    -p https://github.com/zsh-users/zsh-syntax-highlighting \
+    -p 'history-substring-search' \
+    -a 'bindkey "\$terminfo[kcuu1]" history-substring-search-up' \
+    -a 'bindkey "\$terminfo[kcud1]" history-substring-search-down'
+
+COPY ./.zshrc /root/
+
+RUN apk add --no-cache zsh-vcs
+
 COPY ./supervisord.conf /etc/
 COPY ./docker-php-entrypoint /usr/local/bin/
 COPY ./docker-php-entrypoint /usr/local/bin/entrypoint
