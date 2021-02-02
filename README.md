@@ -9,3 +9,5 @@ These images are customized from the official [PHP images registered on DockerHu
 
 - [PHP 7.4.4 FPM Alpine 3.11](https://github.com/gilsongabriel/docker-php-custom-images/tree/master/PHP_7.4.4_FPM_Alpine_3.11)
 - [PHP 7.4.8 FPM Alpine 3.12](https://github.com/gilsongabriel/docker-php-custom-images/tree/master/PHP_7.4.8_FPM_Alpine_3.12)
+- [PHP 7.4.12 FPM Alpine 3.12](https://github.com/gilsongabriel/docker-php-custom-images/tree/master/PHP_7.4.12_FPM_Alpine_3.12)
+- [PHP 8.0.1 FPM Alpine 3.13](https://github.com/gilsongabriel/docker-php-custom-images/tree/master/PHP_8.0.1_FPM_Alpine_3.13)
